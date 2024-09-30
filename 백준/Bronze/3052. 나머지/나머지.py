@@ -1,9 +1,4 @@
-numbers = []
-rest = []
+numbers = [int(input()) for i in range(10)]
 for i in range(10) :
-    num = int(input())
-    numbers.append(num)
-for i in numbers :
-    a = i % 42
-    rest.append(a)
-print(len(list(set(rest))))
+    numbers[i] = numbers[i] % 42
+print(len(list(set(numbers))))
