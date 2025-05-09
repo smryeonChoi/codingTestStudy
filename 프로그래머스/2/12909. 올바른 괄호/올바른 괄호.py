@@ -7,7 +7,7 @@ def solution(s) :
             if stacks == [] :
                 return False 
             else :
-                stacks.pop() 
+                stacks.pop()
     if stacks != [] :
-        return False 
+        return False
     return True
