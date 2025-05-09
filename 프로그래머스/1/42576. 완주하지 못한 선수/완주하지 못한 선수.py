@@ -1,12 +1,9 @@
-def solution(participant, completion):
-    answer = ''
+def solution(par,com) :
     temp = 0
     dic = {}
-    for part in participant:
-        dic[hash(part)] = part
-        temp += int(hash(part))
-    for com in completion:
-        temp -= hash(com)
-    answer = dic[temp]
-
-    return answer
+    for p in par :
+        dic[hash(p)] = p
+        temp += hash(p)
+    for c in com :
+        temp -= hash(c)
+    return dic[temp]
