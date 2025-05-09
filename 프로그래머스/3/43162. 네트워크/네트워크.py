@@ -1,8 +1,7 @@
 
 def solution(n,computers) :
-    visited = [0] * n
+    visited = [0]*n
     answer = 0
-    
     def dfs(c) :
         visited[c] = 1
         for next in range(n) :
