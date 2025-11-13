@@ -1,22 +1,13 @@
 from collections import deque
-
-def solution(progress,speeds) :
-    answer = []
-    days = deque()
-
-    for i in range(len(progress)) :
-        x = (100-progress[i]) / speeds[i]
-
-        if x == int(x) :
-            days.append(int(x))
-        else :
-            days.append(int(x)+1)
-    while days : # days에 값이 존재할 때
-        temp = days.popleft()
+def solution(progresses,speeds) :
+    time = [(100 - progresses[i]) // speeds[i] if (100 - progresses[i]) % speeds[i] == 0 else ((100 - progresses[i]) // speeds[i]) + 1 for i in range(len(progresses))]
+    time = deque(time)
+    ans = []
+    while time :
+        temp = time.popleft()
         count = 1
-
-        while days and temp >= days[0] : 
-            days.popleft()
+        while time and temp >= time[0] :
+            time.popleft()
             count += 1
-        answer.append(count)
-    return answer
+        ans.append(count)
+    return ans
