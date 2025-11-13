@@ -9,5 +9,6 @@ def solution(s) :
             else :
                 stacks.pop()
     if stacks != [] :
-        return False
+        return False 
     return True
+
