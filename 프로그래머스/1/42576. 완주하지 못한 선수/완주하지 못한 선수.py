@@ -1,7 +1,9 @@
-from collections import Counter 
-
 def solution(par,com) :
-    p = Counter(par)
-    c = Counter(com) 
-    diff = p-c
-    return list(diff.keys())[0]
+    hash_table = {}
+    temp = 0
+    for p in par :
+        hash_table[hash(p)] = p
+        temp += hash(p)
+    for c in com :
+        temp -= hash(c)
+    return hash_table[temp]
