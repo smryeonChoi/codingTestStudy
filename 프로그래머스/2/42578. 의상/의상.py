@@ -1,13 +1,17 @@
-def solution(clothes) : 
+def solution(clothes) :
     closet = {}
-    for cloth,type in clothes :
-        if type not in closet :
-            closet[type] = 0
-        closet[type] += 1
-    result = 1
-    for i in list(closet.values()) :
-        result *= (i+1)
-    return result -1
+    for cloth,kind in clothes :
+        if kind in closet :
+            closet[kind] += 1
+        else :
+            closet[kind] = 1
+    if len(closet.keys()) == 1 :
+        return list(closet.values())[0]
+    else :
+        ans = 1
+        for i in list(closet.values()) :
+            ans *= (i+1)
+        return ans - 1
 '''
 def solution(clothes):
     dic = {}
