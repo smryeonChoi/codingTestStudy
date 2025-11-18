@@ -1,8 +1,8 @@
 def solution(numbers) :
-    numbers = [str(num) for num in numbers]
-    numbers = sorted(numbers,key = lambda x : x * 3, reverse=True)
-    result = ''.join(numbers)
-    return result if int(result) != 0 else '0'
+    max_len = len(str(max(numbers)))
+    arr = sorted([str(n) for n in numbers],key = lambda x : str(x) * max_len, reverse = True)
+    ans = ''.join(arr)
+    return ans if int(ans) != 0 else '0'
 
 
 
