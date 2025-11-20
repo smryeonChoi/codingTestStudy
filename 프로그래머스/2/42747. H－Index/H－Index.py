@@ -1,3 +1,4 @@
+'''
 def solution(citations) :
     citations.sort(reverse = True)
     ans = 0
@@ -5,7 +6,13 @@ def solution(citations) :
         if citations[i] >= i + 1 :
             ans += 1
     return ans
-
+'''
+def solution(citations) :
+    citations.sort()
+    ans =[]
+    for h in range(len(citations)) :
+        ans.append(min(citations[h],len(citations)-h))
+    return max(ans)
 
 
 
